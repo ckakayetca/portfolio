@@ -3,3 +3,5 @@ import App from './App.vue'
 import './assets/css/main.css'
 
 createApp(App).mount('#app');
+
+document.querySelector('#loading')?.remove();
