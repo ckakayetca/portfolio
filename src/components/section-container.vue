@@ -1,5 +1,11 @@
 <template>
-    <section :id="id" :class="['flex flex-col items-center justify-center max-w-screen-xl text-neutral-900 dark:text-neutral-200', customClasses]">
+    <section
+        :id="id"
+        :class="[
+            'flex max-w-screen-xl flex-col items-center justify-center text-neutral-900 dark:text-neutral-200',
+            customClasses,
+        ]"
+    >
         <slot />
     </section>
 </template>

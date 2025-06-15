@@ -1,5 +1,7 @@
 <template>
-    <span :class="`accent-badge uppercase bg-accent-indigo text-purple-100 inline-flex items-center gap-1 mx-1 font-bold ${sizeClasses} ${pulse ? 'pulse-shadow' : ''}`">
+    <span
+        :class="`accent-badge mx-1 inline-flex items-center gap-1 bg-accent-indigo font-bold uppercase text-purple-100 ${sizeClasses} ${pulse ? 'pulse-shadow' : ''}`"
+    >
         <i :class="`icon-${icon}`" />
 
         <span>{{ text }}</span>
@@ -7,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+    import { computed } from 'vue'
 
     const props = defineProps({
         icon: {
@@ -25,21 +27,21 @@ import { computed } from 'vue';
         pulse: {
             type: Boolean,
             default: false,
-        }
+        },
     })
 
     const sizeClasses = computed(() => {
         switch (props.size) {
             case 'sm':
-                return 'text-sm py-1 px-2';
+                return 'text-sm py-1 px-2'
             case 'md':
-                return 'text-base py-1 px-2';
+                return 'text-base py-1 px-2'
             case 'lg':
-                return 'text-lg py-2 px-3';
+                return 'text-lg py-2 px-3'
             case 'xl':
-                return 'text-6xl py-3 px-4';
+                return 'text-6xl py-3 px-4'
             default:
-                return 'text-sm';
+                return 'text-sm'
         }
     })
 </script>

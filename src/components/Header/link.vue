@@ -1,8 +1,11 @@
 <template>
     <li>
-        <a :href="href" class="py-2 px-3 border-purple-600 bg-accent-indigo text-white dark:bg-accent-indigo dark:hover:bg-accent-indigo/80 hover:bg-indigo-600 transition-all duration-200 flex items-center gap-2">
-            <i :class="[icon, 'text-xl']"></i>
-            
+        <a
+            class="flex items-center gap-2 border-purple-600 bg-accent-indigo px-3 py-2 text-white transition-all duration-200 hover:bg-indigo-600 dark:bg-accent-indigo dark:hover:bg-accent-indigo/80"
+            :href="href"
+        >
+            <i :class="[icon, 'text-xl']" />
+
             <span class="text-white dark:text-purple-100">
                 {{ text }}
             </span>

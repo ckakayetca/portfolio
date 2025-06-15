@@ -1,7 +1,9 @@
+import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
+import typescriptEslintParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import Vue from 'eslint-plugin-vue'
 import globals from 'globals'
-import typescript from 'typescript-eslint'
+import vueEslintParser from 'vue-eslint-parser'
 
 export default [
     {
@@ -10,34 +12,30 @@ export default [
     eslintConfigPrettier,
     ...Vue.configs['flat/recommended'],
     {
-        files: ['**/*.{ts,vue}'],
+        files: ['**/*.{ts,js,vue}'],
         linterOptions: {
             reportUnusedDisableDirectives: true,
         },
         languageOptions: {
+            parser: vueEslintParser,
+            parserOptions: {
+                parser: typescriptEslintParser,
+            },
             globals: {
-                ...globals.browser,
                 ...globals.node,
+                ...globals.browser,
                 ...globals.es2021,
-                ...typescript.globals,
             },
         },
         plugins: {
+            '@typescript-eslint': typescriptEslintPlugin,
             vue: Vue,
-            typescript: typescript,
         },
         rules: {
-            'comma-dangle': ['warn', 'always-multiline'],
-            'no-const-assign': 'error',
+            'comma-dangle': 'off',
             'no-inner-declarations': 'off',
             'no-undef': 'error',
-            'no-unused-vars': [
-                'error',
-                {
-                    varsIgnorePattern: '^_', // Ignore variables starting with "_"
-                    argsIgnorePattern: '^_', // Ignore function parameters starting with "_"
-                },
-            ],
+            'no-unused-vars': 'error',
             'vue/html-self-closing': [
                 'error',
                 {
