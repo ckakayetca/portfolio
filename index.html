@@ -6,27 +6,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Emil Georgiev</title>
     </head>
-    <body class="bg-purple-50 dark:bg-neutral-800 min-h-screen">
-        <div id="loading" class="flex justify-center items-center h-screen">
+    <body class="bg-white dark:bg-neutral-800 min-h-screen w-screen">
+        <div id="loading">
             <style>
-            .loader {
-              width: 48px;
-              height: 48px;
-              border: 5px solid #FFF;
-              border-bottom-color: #8b5cf6;
-              border-radius: 50%;
-              display: inline-block;
-              box-sizing: border-box;
-              animation: rotation 1s linear infinite;
-            }
-            @keyframes rotation {
-              0% {
-                transform: rotate(0deg);
+              @media (prefers-color-scheme: dark) {
+                body {
+                  background-color: #262626;
+                }
               }
-              100% {
-                transform: rotate(360deg);
+
+              @media (prefers-color-scheme: light) {
+                body {
+                  background-color: #fafafa;
+                }
               }
-            }
+
+              body {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .loader {
+                width: 120px;
+                height: 120px;
+                border: 5px solid #FFF;
+                border-bottom-color: #8b5cf6;
+                border-radius: 50%;
+                box-sizing: border-box;
+                animation: rotation 1s linear infinite;
+              }
+              @keyframes rotation {
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
             </style>
             <div class="loader"></div>
         </div>

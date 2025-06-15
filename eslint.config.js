@@ -1,6 +1,7 @@
 import eslintConfigPrettier from 'eslint-config-prettier'
 import Vue from 'eslint-plugin-vue'
 import globals from 'globals'
+import typescript from 'typescript-eslint'
 
 export default [
     {
@@ -9,19 +10,21 @@ export default [
     eslintConfigPrettier,
     ...Vue.configs['flat/recommended'],
     {
-        files: ['**/*.{js,vue}'],
+        files: ['**/*.{ts,vue}'],
         linterOptions: {
             reportUnusedDisableDirectives: true,
         },
         languageOptions: {
             globals: {
-                ...globals.node,
                 ...globals.browser,
+                ...globals.node,
                 ...globals.es2021,
+                ...typescript.globals,
             },
         },
         plugins: {
             vue: Vue,
+            typescript: typescript,
         },
         rules: {
             'comma-dangle': ['warn', 'always-multiline'],
