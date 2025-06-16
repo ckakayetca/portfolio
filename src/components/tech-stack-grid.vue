@@ -1,17 +1,17 @@
 <template>
-    <div class="grid w-full grid-cols-3 gap-7">
+    <div class="grid w-full grid-cols-3 gap-10">
         <a
             v-for="tech in techStack"
             :key="tech.name"
-            :class="`flex flex-col items-center justify-center gap-8 rounded-md border border-neutral-400 bg-white/10 px-5 py-7 transition-all duration-200 dark:border-neutral-600 dark:bg-neutral-700/80`"
+            :class="`flex flex-col items-center justify-center gap-8 rounded-lg border border-neutral-400 bg-white/10 px-5 py-7 transition-all duration-200 dark:border-neutral-600 dark:bg-neutral-700/80`"
             :href="tech.link"
             target="_blank"
             @mouseover="(event) => onHover(event, tech.color)"
             @mouseleave="onLeave"
         >
-            <img class="h-32 w-32 transition-all duration-100" :src="tech.image" :alt="tech.name" />
+            <img class="h-24 w-24 transition-all duration-100" :src="tech.image" :alt="tech.name" />
 
-            <span class="text-lg">{{ tech.name }}</span>
+            <span class="text-xl">{{ tech.name }}</span>
         </a>
     </div>
 </template>
@@ -58,13 +58,13 @@
 
     const techStack = [
         {
-            name: 'Vue',
+            name: 'Vue 3',
             image: vue,
             color: '#41B883',
             link: 'https://vuejs.org/',
         },
         {
-            name: 'Nuxt.js',
+            name: 'Nuxt 3',
             image: nuxtjs,
             color: '#8CC84B',
             link: 'https://nuxt.com/',
