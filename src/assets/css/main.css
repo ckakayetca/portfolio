@@ -1,7 +1,7 @@
-@import "../fonts/Montserrat/Montserrat.css";
-@import "../fonts/GreatVibes/stylesheet.css";
-@import "../fonts/icomoon/style.css";
-@import "./animations.css";
+@import '../fonts/Montserrat/Montserrat.css';
+@import '../fonts/GreatVibes/stylesheet.css';
+@import '../fonts/icomoon/style.css';
+@import './animations.css';
 
 @tailwind base;
 @tailwind components;
@@ -9,4 +9,13 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }

@@ -3,6 +3,14 @@ export default {
     content: ['./index.html', './src/**/*.{vue,js,ts}'],
     darkMode: 'selector',
     theme: {
+        screens: {
+            xs: '380px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            '2xl': '1536px',
+        },
         extend: {
             colors: {
                 purple: {
@@ -36,6 +44,18 @@ export default {
                     900: '#171717',
                     950: '#0a0a0a',
                 },
+            },
+            keyframes: {
+                'spin-slow': {
+                    '0%': { transform: 'rotate(0deg)' },
+                    '100%': { transform: 'rotate(360deg)' },
+                },
+            },
+            animation: {
+                'spin-slow': 'spin-slow 30s linear infinite',
+            },
+            dropShadow: {
+                '2xl': '0 10px 15px -3px rgba(99, 102, 241, 0.7), 0 4px 6px -2px rgba(99, 102, 241, 0.05)',
             },
         },
         fontFamily: {

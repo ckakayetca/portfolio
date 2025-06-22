@@ -2,9 +2,10 @@
     <section
         :id="id"
         :class="[
-            'flex max-w-screen-xl flex-col h-screen items-center justify-center text-neutral-900 dark:text-neutral-200 border-b border-gray-300 dark:border-neutral-600',
+            'section-container flex min-h-screen max-w-screen-lg snap-start flex-col items-center justify-start pt-16 text-neutral-900 md:justify-center dark:text-neutral-200',
             customClasses,
         ]"
+        :data-label="label"
     >
         <slot />
     </section>
@@ -13,6 +14,10 @@
 <script setup lang="ts">
     defineProps({
         id: {
+            type: String,
+            required: true,
+        },
+        label: {
             type: String,
             required: true,
         },

@@ -1,6 +1,6 @@
 <template>
     <span
-        :class="`accent-badge mx-1 inline-flex items-center gap-1 bg-accent-indigo font-bold uppercase text-purple-100 ${sizeClasses} ${pulse ? 'pulse-shadow' : ''}`"
+        :class="`accent-badge mx-1 inline-flex max-w-full items-center gap-1 bg-accent-indigo font-bold uppercase text-purple-100 ${sizeClasses} ${pulse ? 'pulse-shadow' : ''}`"
         v-bind="$attrs"
     >
         <i :class="`icon-${icon}`" />
@@ -40,7 +40,7 @@
             case 'lg':
                 return 'text-lg py-2 px-3 rounded-md'
             case 'xl':
-                return 'text-6xl py-3 px-4 rounded-xl'
+                return 'text-3xl xs:text-4xl md:text-6xl py-3 px-4 rounded-xl'
             default:
                 return 'text-sm rounded-md'
         }

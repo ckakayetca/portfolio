@@ -6,7 +6,10 @@
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc -b && vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "lint:eslint": "eslint .",
+        "lint:prettier": "prettier --check .",
+        "lint:fix": "eslint . --fix && prettier --write ."
     },
     "dependencies": {
         "globals": "^16.2.0",

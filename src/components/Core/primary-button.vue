@@ -1,6 +1,6 @@
 <template>
     <button
-        class="bg-accent-indigo rounded-md px-3 py-1 text-white transition-all duration-200 hover:bg-indigo-600 dark:bg-accent-indigo dark:hover:bg-accent-indigo/80"
+        class="rounded-md bg-accent-indigo px-3 py-1 text-white transition-all duration-200 hover:bg-indigo-600 dark:bg-accent-indigo dark:hover:bg-accent-indigo/80"
     >
         <i v-if="icon" :class="[icon, 'text-xl']" />
 

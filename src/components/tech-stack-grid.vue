@@ -1,17 +1,21 @@
 <template>
-    <div class="grid w-full grid-cols-3 gap-10">
+    <div class="grid w-full grid-cols-2 gap-3 md:grid-cols-3 lg:gap-10">
         <a
             v-for="tech in techStack"
             :key="tech.name"
-            :class="`flex flex-col items-center justify-center gap-8 rounded-lg border border-neutral-400 bg-white/10 px-5 py-7 transition-all duration-200 dark:border-neutral-600 dark:bg-neutral-700/80`"
+            :class="`flex flex-col items-center justify-center gap-8 rounded-lg border border-gray-300 px-3 py-5 transition-all duration-200 hover:scale-105 md:px-5 md:py-7 dark:border-neutral-600`"
             :href="tech.link"
             target="_blank"
             @mouseover="(event) => onHover(event, tech.color)"
             @mouseleave="onLeave"
         >
-            <img class="h-24 w-24 transition-all duration-100" :src="tech.image" :alt="tech.name" />
+            <img
+                class="h-12 w-12 transition-all duration-100 md:h-24 md:w-24"
+                :src="tech.image"
+                :alt="`${tech.name} Logo`"
+            />
 
-            <span class="text-xl">{{ tech.name }}</span>
+            <span class="text-lg md:text-xl">{{ tech.name }}</span>
         </a>
     </div>
 </template>

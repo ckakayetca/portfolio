@@ -1,5 +1,5 @@
 <template>
-    <PrimaryButton :icon="icon" @click="toggleTheme" />
+    <PrimaryButton :icon="icon" title="Switch Theme" @click="toggleTheme" />
 </template>
 
 <script setup lang="ts">
