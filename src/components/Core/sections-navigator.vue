@@ -35,21 +35,15 @@
     onMounted(() => {
         sections.value = Array.from(document.querySelectorAll('.section-container'))
 
-        console.log(document.querySelectorAll("a[href^='#']"))
-
         document.querySelectorAll("a[href^='#']").forEach((anchor) => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault()
-
-                console.log('Clicked', e.target)
 
                 const target = e.target as HTMLElement
 
                 // There's a chance that the target is a child of the anchor, so we need to check the parent element
                 const targetHref =
                     target.getAttribute('href') ?? target.parentElement?.getAttribute('href')
-
-                console.log('Scrolling to', targetHref)
 
                 document.querySelector(targetHref!)?.scrollIntoView({ behavior: 'smooth' })
             })
